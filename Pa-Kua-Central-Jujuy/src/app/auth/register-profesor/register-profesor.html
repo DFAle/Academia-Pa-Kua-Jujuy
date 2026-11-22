@@ -1,0 +1,110 @@
+<div class="container reg-wrap">
+
+  <div class="reg-card">
+
+    <!-- Panel lateral -->
+    <aside class="reg-side">        
+      <div class="side-contenido">
+        <div class="side-logo">
+            <img src="logo-pakua.png" alt="Pa-Kua Liga Internacional Central Jujuy">
+        </div>
+        <span class="side-etiqueta"><i class="bi bi-person-plus-fill me-1"></i>Nuevo ingreso</span>
+        <h2 class="side-titulo">Registrar<br>Profesor</h2>
+        <p class="side-texto">
+          Sumá un nuevo maestro al plantel docente de la academia y asignale su disciplina.
+        </p>
+
+        <ul class="side-pasos">
+          <li><span><i class="bi bi-person"></i></span> Datos personales</li>
+          <li><span><i class="bi bi-envelope"></i></span> Contacto</li>
+          <li><span><i class="bi bi-award"></i></span> Graduación y disciplina</li>
+        </ul>
+      </div>
+
+      <div class="side-pie">Método Pa-Kua · Gestión de academia</div>
+    </aside>
+
+    <!-- Formulario -->
+    <form class="reg-form">
+
+      <h5 class="form-grupo"><i class="bi bi-person-vcard"></i> Datos personales</h5>
+      <div class="row g-3 mb-4">
+        <div class="col-md-6">
+          <div class="form-floating">
+            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>
+            <label for="nombre">Nombre</label>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-floating">
+            <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido" required>
+            <label for="apellido">Apellido</label>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="form-floating">
+            <input type="text" inputmode="numeric" class="form-control" id="documento" name="documento" placeholder="Documento" required>
+            <label for="documento">Documento (sin puntos)</label>
+          </div>
+        </div>
+      </div>
+
+      <h5 class="form-grupo"><i class="bi bi-chat-dots"></i> Contacto</h5>
+      <div class="row g-3 mb-4">
+        <div class="col-md-5">
+          <div class="form-floating">
+            <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Teléfono" required>
+            <label for="telefono">Teléfono</label>
+          </div>
+        </div>
+        <div class="col-md-7">
+          <div class="form-floating">
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+            <label for="email">Email</label>
+          </div>
+        </div>
+      </div>
+
+      <h5 class="form-grupo"><i class="bi bi-award"></i> Perfil marcial</h5>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="graduacion" name="graduacion" placeholder="Graduación" required>
+        <label for="graduacion">Graduación (ej: Cinturón negro 3° Dan)</label>
+      </div>
+
+      <p class="chips-label">Especialización</p>
+      <div class="chips mb-4">
+        <input type="radio" class="btn-check" name="especializacion" id="e1" value="arte-marcial" required>
+        <label class="chip" for="e1">Arte Marcial</label>
+
+        <input type="radio" class="btn-check" name="especializacion" id="e2" value="arqueria">
+        <label class="chip" for="e2">Arquería</label>
+
+        <input type="radio" class="btn-check" name="especializacion" id="e3" value="acrobacia">
+        <label class="chip" for="e3">Acrobacia</label>
+
+        <input type="radio" class="btn-check" name="especializacion" id="e4" value="armas-de-corte">
+        <label class="chip" for="e4">Armas de corte</label>
+
+        <input type="radio" class="btn-check" name="especializacion" id="e5" value="pa-kua-ritmo">
+        <label class="chip" for="e5">Pa-Kua Ritmo</label>
+
+        <input type="radio" class="btn-check" name="especializacion" id="e6" value="pa-kua-chi">
+        <label class="chip" for="e6">Pa-Kua Chi</label>
+
+        <input type="radio" class="btn-check" name="especializacion" id="e7" value="sintonia-yoga-chino">
+        <label class="chip" for="e7">Sintonía Yoga chino</label>
+
+        <input type="radio" class="btn-check" name="especializacion" id="e8" value="cosmodinamia-tai-chi">
+        <label class="chip" for="e8">Cosmodinamia Tai-Chi</label>
+      </div>
+
+      <div class="reg-acciones">
+        <button type="button" class="btn btn-cancelar">Cancelar</button>
+        <button type="submit" class="btn btn-registrar">
+          Guardar profesor <i class="bi bi-arrow-right ms-1"></i>
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>
