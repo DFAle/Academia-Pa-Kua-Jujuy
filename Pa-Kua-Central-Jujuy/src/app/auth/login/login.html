@@ -1,1 +1,330 @@
-<p>login works!</p>
+<div class="auth-page d-flex flex-column justify-content-between min-vh-100">
+  <main class="auth-main bagua-watermark-light flex-grow-1 d-flex flex-column align-items-center justify-content-center position-relative py-4 px-3">
+    <!-- Glows decorativos de fondo -->
+    <div class="bg-glow bg-glow--top-left" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow--bottom-right" aria-hidden="true"></div>
+
+    <div class="auth-wrapper position-relative z-1 w-100 my-auto py-3">
+      <!-- Encabezado con logo oficial -->
+      <header class="d-flex flex-column align-items-center text-center mb-4">
+        <div class="brand-logo-box d-flex align-items-center justify-content-center p-3 mb-3">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYuHdraQUnbu3de_NycmBiyMjwZu5FH_CXoow21QcBzML3Dup8_qc6LcOrS0L2goMAR_WtyiLDBPaMnn-_WJjehMPeTodj_1XguCuzeTkRYkzT5QeVxCc7VSjLkItUZdUXecTXjC_Qxo4KgFBBb3eDftnjgPyhuZDr3C7TkwZj2KLhS79OIXs5w-7oRyqKOYwXvdRxqH7N2gq3DkEsgxh5lEKUJ_JU6rXOE4oxoez1FyqCHP91luhq7Q"
+            alt="Logo Pa-Kua Central Jujuy"
+            class="brand-logo-img"
+          />
+        </div>
+
+        <div class="sede-badge d-inline-flex align-items-center gap-2 px-3 py-1 mb-2">
+          <span class="sede-badge__dot" aria-hidden="true"></span>
+          <span>Central Jujuy • Sede Oficial</span>
+        </div>
+
+        <h1 class="brand-title mb-1">Pa-Kua Central Jujuy</h1>
+        <p class="brand-subtitle mb-0">Portal de Gestión y Práctica</p>
+      </header>
+
+      <!-- Tarjeta principal -->
+      <section class="auth-card">
+        <!-- Encabezado de tarjeta y selector de pestañas -->
+        <div class="auth-card__top d-flex flex-column flex-sm-row align-items-sm-center justify-content-between gap-3 pb-3">
+          <div>
+            <h2 class="auth-card__title mb-1" id="auth-title">Acceso al Sistema</h2>
+            <p class="auth-card__subtitle mb-0" id="auth-subtitle">
+              Ingresa tus credenciales oficiales de la sede
+            </p>
+          </div>
+
+          <div class="tab-switcher d-inline-flex p-1 align-self-start align-self-sm-auto">
+            <button
+              type="button"
+              id="tab-login"
+              class="tab-btn tab-btn--active d-inline-flex align-items-center gap-1"
+            >
+              <i class="bi bi-box-arrow-in-right"></i>
+              <span>Iniciar Sesión</span>
+            </button>
+
+            <button
+              type="button"
+              id="tab-register"
+              class="tab-btn d-inline-flex align-items-center gap-1"
+            >
+              <i class="bi bi-person-plus"></i>
+              <span>Registrarse</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Selector de Perfil Marcial -->
+        <div class="mt-3 pt-1">
+          <label class="role-section__label d-block mb-2">Selecciona tu Perfil Marcial</label>
+
+          <div class="row g-2" id="role-selector-container">
+            <div class="col-4">
+              <button
+                type="button"
+                class="role-pill role-pill--active w-100 h-100 d-flex flex-column align-items-center justify-content-center text-center"
+              >
+                <i class="bi bi-bank role-pill__icon mb-1"></i>
+                <span class="role-pill__title">Sede Central</span>
+                <span class="role-pill__sub">Directiva</span>
+              </button>
+            </div>
+
+            <div class="col-4">
+              <button
+                type="button"
+                class="role-pill w-100 h-100 d-flex flex-column align-items-center justify-content-center text-center"
+              >
+                <i class="bi bi-award role-pill__icon mb-1"></i>
+                <span class="role-pill__title">Profesor</span>
+                <span class="role-pill__sub">Instructor</span>
+              </button>
+            </div>
+
+            <div class="col-4">
+              <button
+                type="button"
+                class="role-pill w-100 h-100 d-flex flex-column align-items-center justify-content-center text-center"
+              >
+                <i class="bi bi-mortarboard role-pill__icon mb-1"></i>
+                <span class="role-pill__title">Alumno</span>
+                <span class="role-pill__sub">o Tutor</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================== FORMULARIO LOGIN ==================== -->
+        <form id="form-login" class="mt-3 pt-1">
+          <div class="mb-3">
+            <label class="form-label custom-label" for="login-id">DNI o Correo Institucional</label>
+            <div class="input-wrapper position-relative">
+              <i class="bi bi-person-vcard input-icon--left"></i>
+              <input
+                id="login-id"
+                type="text"
+                class="form-control custom-input custom-input--left-icon"
+                placeholder="Ej. 35.120.481 o usuario@pakua.com"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <div class="d-flex align-items-center justify-content-between mb-1">
+              <label class="form-label custom-label mb-0" for="login-password">Contraseña</label>
+              <a href="#" class="forgot-link">¿Olvidaste tu contraseña?</a>
+            </div>
+
+            <div class="input-wrapper position-relative">
+              <i class="bi bi-lock input-icon--left"></i>
+              <input
+                id="login-password"
+                type="password"
+                class="form-control custom-input custom-input--both-icons"
+                placeholder="••••••••••••"
+                required
+              />
+              <button
+                type="button"
+                class="toggle-password-btn"
+                aria-label="Mostrar u ocultar contraseña"
+              >
+                <i class="bi bi-eye" id="toggle-icon-login"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <div class="form-check">
+              <input
+                class="form-check-input custom-checkbox"
+                type="checkbox"
+                id="remember-me"
+              />
+              <label class="form-check-label custom-check-label" for="remember-me">
+                Recordar mi sesión en este dispositivo
+              </label>
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            class="btn btn-primary-pakua w-100 d-flex align-items-center justify-content-center gap-2"
+          >
+            <span>Ingresar al Dojo Virtual</span>
+            <i class="bi bi-arrow-right"></i>
+          </button>
+
+          <div class="divider d-flex align-items-center my-3">
+            <div class="divider__line flex-grow-1"></div>
+            <span class="divider__text px-3">O ingreso presencial con terminal</span>
+            <div class="divider__line flex-grow-1"></div>
+          </div>
+
+          <button
+            type="button"
+            class="btn btn-qr w-100 d-flex align-items-center justify-content-center gap-2"
+          >
+            <i class="bi bi-qr-code-scan"></i>
+            <span>Escanear Credencial QR en Sede</span>
+          </button>
+        </form>
+
+        <!-- ==================== FORMULARIO REGISTRO (oculto con d-none) ==================== -->
+        <form id="form-register" class="mt-3 pt-1 d-none">
+          <div class="row g-2 mb-2">
+            <div class="col-12 col-sm-6">
+              <label class="form-label custom-label" for="reg-name">Nombre Completo</label>
+              <input
+                id="reg-name"
+                type="text"
+                class="form-control custom-input"
+                placeholder="Ej. Lucas Morales"
+                required
+              />
+            </div>
+
+            <div class="col-12 col-sm-6">
+              <label class="form-label custom-label" for="reg-dni">DNI / Documento</label>
+              <input
+                id="reg-dni"
+                type="text"
+                class="form-control custom-input"
+                placeholder="Sin puntos: 40123456"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="row g-2 mb-2">
+            <div class="col-12 col-sm-6">
+              <label class="form-label custom-label" for="reg-email">Correo Electrónico</label>
+              <input
+                id="reg-email"
+                type="email"
+                class="form-control custom-input"
+                placeholder="alumno@ejemplo.com"
+                required
+              />
+            </div>
+
+            <div class="col-12 col-sm-6">
+              <label class="form-label custom-label" for="reg-phone">WhatsApp / Contacto</label>
+              <div class="input-group">
+                <span class="input-group-text phone-prefix">+54</span>
+                <input
+                  id="reg-phone"
+                  type="tel"
+                  class="form-control custom-input phone-input"
+                  placeholder="388 456-7890"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-2">
+            <label class="form-label custom-label" for="reg-mastery">
+              Maestría Principal de Interés
+            </label>
+            <select id="reg-mastery" class="form-select custom-input">
+              <option value="arte-marcial">Arte Marcial Tradicional (Cinto Blanco a Negro)</option>
+              <option value="sintonia">Sintonía (Yoga Chino y Flexibilidad)</option>
+              <option value="pakua-chi">Pa-Kua Chi (Respiración y Energía)</option>
+              <option value="tai-chi">Cosmodinamia / Tai-Chi</option>
+              <option value="armas">Armas Tradicionales y de Corte</option>
+              <option value="acrobacia">Acrobacia Marcial</option>
+            </select>
+          </div>
+
+          <div class="row g-2 mb-3">
+            <div class="col-12 col-sm-6">
+              <label class="form-label custom-label" for="reg-pass">Nueva Contraseña</label>
+              <input
+                id="reg-pass"
+                type="password"
+                class="form-control custom-input"
+                placeholder="Mín. 8 caracteres"
+                required
+              />
+            </div>
+
+            <div class="col-12 col-sm-6">
+              <label class="form-label custom-label" for="reg-pass-confirm">
+                Confirmar Contraseña
+              </label>
+              <input
+                id="reg-pass-confirm"
+                type="password"
+                class="form-control custom-input"
+                placeholder="Repetir clave"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <div class="form-check">
+              <input
+                class="form-check-input custom-checkbox"
+                type="checkbox"
+                id="reg-terms"
+                required
+              />
+              <label class="form-check-label terms-text" for="reg-terms">
+                Acepto el reglamento del Dojo y autorizo a Pa-Kua Jujuy a procesar mi solicitud de membresía.
+              </label>
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            class="btn btn-primary-pakua w-100 d-flex align-items-center justify-content-center gap-2"
+          >
+            <i class="bi bi-file-earmark-text"></i>
+            <span>Solicitar Alta de Cuenta en Sede</span>
+          </button>
+        </form>
+
+        <!-- Pie interno de la tarjeta -->
+        <div class="auth-card__footer d-flex align-items-center justify-content-between mt-4 pt-3">
+          <span class="security-item d-inline-flex align-items-center gap-1">
+            <i class="bi bi-shield-check"></i>
+            <span>Encriptación TLS 256-bit</span>
+          </span>
+          <span class="node-item d-inline-flex align-items-center gap-1">
+            <i class="bi bi-hdd-rack"></i>
+            <span>Servidor Jujuy Node 01</span>
+          </span>
+        </div>
+      </section>
+
+      <!-- Metadata inferior -->
+      <div class="meta-bar d-flex flex-column flex-sm-row align-items-center justify-content-between gap-2 mt-3 px-2">
+        <div class="meta-bar__location d-inline-flex align-items-center gap-1">
+          <i class="bi bi-geo-alt-fill"></i>
+          <span>San Salvador de Jujuy, Argentina</span>
+        </div>
+        <div class="meta-bar__status d-inline-flex align-items-center gap-2">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>Ciclo Activo 2024</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer institucional -->
+  <footer class="site-footer w-100 py-3 px-4 d-flex flex-column flex-sm-row align-items-center justify-content-between gap-2">
+    <div class="site-footer__brand">
+      <strong>Pa-Kua Central Jujuy 2024</strong> • Liga Internacional de Pa-Kua • San Salvador de Jujuy, Jujuy, Argentina.
+    </div>
+    <div class="site-footer__links d-inline-flex align-items-center gap-3">
+      <a href="#">Términos de Servicio</a>
+      <span>•</span>
+      <a href="#">Mesa de Ayuda</a>
+    </div>
+  </footer>
+</div>
