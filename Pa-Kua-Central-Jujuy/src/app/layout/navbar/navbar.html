@@ -1,1 +1,71 @@
-<p>navbar works!</p>
+<header class="top-navbar fixed-top">
+  <div class="container-fluid h-100 px-3 px-lg-4 d-flex align-items-center justify-content-between gap-2">
+    <!-- Marca + Navegación -->
+    <div class="d-flex align-items-center gap-3 gap-lg-4">
+      <div class="d-flex align-items-center gap-2">
+        <div class="brand-thumb d-flex align-items-center justify-content-center flex-shrink-0">
+          <img
+            src="https://lh3.googleusercontent.com/aida/ALJJyrBAFkUVaA72kJSfNWDgyg5hNRq_ew14v5BTMIf1pA9P10Br86cZ8r3wJfLlv2HO8PEJDgqJYmSi_BM8somNZVa8kQX3CzUQdzJ82fcX9BpoHEHaiq10kb2kYoFJ3MCie281epPzZUjpxMLZeRFIs2TJxvq8pDnyNLY2UItqIepA734mxvn10-sxcpWlq3dxecg_XMWjjRFhQ-YK9lm3BGxAUj2ptgjPHE0AW-eKYB5C0O9JIMK4vH-MIM76"
+            alt="Logo Pa-Kua Central Jujuy"
+            class="w-100 h-100 object-fit-cover rounded-2"
+          />
+        </div>
+
+        <div class="d-flex flex-column">
+          <div class="d-flex align-items-center gap-2 flex-wrap">
+            <span class="top-brand-name">Pa-Kua Central Jujuy</span>
+            <span class="sede-pill">Sede Central</span>
+          </div>
+          <span class="top-brand-sub">Portal de Administración</span>
+        </div>
+      </div>
+
+      <nav class="d-none d-lg-flex align-items-center gap-1 ms-2" aria-label="Navegación principal">
+        <a href="#" class="nav-link-custom nav-link-custom--active" [routerLink]="['home']">Inicio</a>
+
+        <div class="dropdown nav-dropdown">
+          <button
+            type="button"
+            class="nav-link-custom dropdown-toggle d-inline-flex align-items-center gap-1"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <span>Gestión</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-custom">
+            <li><a class="dropdown-item dropdown-item-custom" [routerLink]="['gestionprofesores']">Profesores</a></li>
+            <li><a class="dropdown-item dropdown-item-custom" [routerLink]="['gestionalumnos']">Alumnos</a></li>
+          </ul>
+        </div>
+
+        <a href="#" class="nav-link-custom">Clases y Horarios</a>
+        <a href="#" class="nav-link-custom">Finanzas y Reportes</a>
+      </nav>
+    </div>
+
+    <!-- Estado de ciclo + Usuario -->
+    <div class="d-flex align-items-center gap-2 gap-sm-3">
+      <div class="ciclo-pill d-none d-md-inline-flex align-items-center gap-2">
+        <span class="dot-emerald" aria-hidden="true"></span>
+        <span>Ciclo Activo 2024</span>
+      </div>
+
+      <div class="d-flex align-items-center gap-2 ps-2 ps-sm-3 border-start">
+        <div class="user-chip d-flex align-items-center gap-2">
+          <img
+            src="https://lh3.googleusercontent.com/aida/ALJJyrBAFkUVaA72kJSfNWDgyg5hNRq_ew14v5BTMIf1pA9P10Br86cZ8r3wJfLlv2HO8PEJDgqJYmSi_BM8somNZVa8kQX3CzUQdzJ82fcX9BpoHEHaiq10kb2kYoFJ3MCie281epPzZUjpxMLZeRFIs2TJxvq8pDnyNLY2UItqIepA734mxvn10-sxcpWlq3dxecg_XMWjjRFhQ-YK9lm3BGxAUj2ptgjPHE0AW-eKYB5C0O9JIMK4vH-MIM76"
+            alt="Admin Sede Central"
+            class="user-chip__avatar rounded-circle object-fit-cover"
+          />
+          <div class="d-none d-sm-flex flex-column text-start">
+            <span class="user-chip__name">Admin Sede Central</span>
+            <span class="user-chip__role">Director Técnico</span>
+          </div>
+        </div>
+
+        <a href="#" class="logout-btn d-inline-flex align-items-center justify-content-center" title="Cerrar sesión" aria-label="Cerrar sesión" [routerLink]="['Login']"><i class="bi bi-box-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
