@@ -7,7 +7,7 @@ import { RegisterProfesor } from './auth/register-profesor/register-profesor';
 export const routes: Routes = [
     {path:"",redirectTo:"home",pathMatch:"full"},   //cambiar por home
       {path:"gestionprofesores",component:TablaProfesores},
-      {path:"registerProfesor",component:RegisterProfesor},   
+      {path:"gestionprofesores/registerProfesor",component:RegisterProfesor},   
       {path:'Login',component: Login},
       {path:'home',component: Home}
 
