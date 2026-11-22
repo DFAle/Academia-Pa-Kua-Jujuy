@@ -1,76 +1,123 @@
-<div class="container">
+<div class="container-fluid pf-wrap">
 
   <!-- Encabezado -->
-  <div class="d-flex flex-wrap justify-content-between align-items-start gap-3 mb-4">
+  <header class="pf-head">
     <div>
-      <h2 class="fw-bold mb-1">Gestión de Profesores</h2>
-      <p class="text-muted small mb-0">
+      <div class="pf-migas">
+        <span>SEDE CENTRAL</span>
+        <i class="bi bi-chevron-right"></i>
+        <strong>PROFESORES</strong>
+      </div>
+      <h1 class="pf-titulo">Gestión de Profesores</h1>
+      <p class="pf-sub">
         Control unificado de titulaciones marciales, especializaciones del método Pa-Kua,
         asignaciones horarias y liquidaciones.
       </p>
     </div>
-    <div class="d-flex gap-2">
-      <button class="btn btn-light border btn-sm px-3">
-        <i class="bi bi-download me-1"></i> Exportar Listado
-      </button>
-      <button class="btn btn-primary btn-sm px-3">
-        <i class="bi bi-person-plus me-1"></i> Nuevo Profesor
-      </button>
-    </div>
-  </div>
 
-  <!-- Tarjetas de estadísticas -->
+    <div class="pf-acciones">
+      <button class="btn pf-btn-sec"><i class="bi bi-download me-1"></i> Exportar Listado</button>
+        <a class="btn pf-btn-main" [routerLink]="['/gestionprofesores/registerProfesor']">
+          Registrar profesor
+        </a>
+        
+    </div>
+  </header>
+
+  <!-- Tarjetas -->
   <div class="row g-3 mb-4">
+
     <div class="col-12 col-sm-6 col-xl-3">
-      <div class="stat-card tone-blue">
-        <span class="stat-icon"><i class="bi bi-person-arms-up"></i></span>
-        <div class="stat-label">Total profesores</div>
-        <div class="stat-value">1245</div>
-        <div class="stat-note text-secondary">
-          <i class="bi bi-circle-fill text-primary me-1" style="font-size:.4rem; vertical-align:middle"></i>
-          Plantel docente registrado
+      <div class="pf-stat">
+        <div class="pf-stat-top">
+          <span class="pf-stat-label">Total profesores</span>
+          <span class="pf-icono ico-neg"><i class="bi bi-person-arms-up"></i></span>
         </div>
+        <div class="pf-valor">1245</div>
+        <div class="pf-stat-pie"><span>Plantel docente registrado</span></div>
+        <div class="pf-barra neg"><span style="width: 100%"></span></div>
       </div>
     </div>
 
     <div class="col-12 col-sm-6 col-xl-3">
-      <div class="stat-card tone-green">
-        <span class="stat-icon"><i class="bi bi-check-circle"></i></span>
-        <div class="stat-label">Activos en clases</div>
-        <div class="stat-value">12</div>
-        <div class="stat-note text-success">85.7% <span class="text-dark fw-semibold">en actividad este ciclo</span></div>
-      </div>
-    </div>
-
-    <div class="col-12 col-sm-6 col-xl-3">
-      <div class="stat-card tone-violet">
-        <span class="stat-icon"><i class="bi bi-award"></i></span>
-        <div class="stat-label">Maestrías cubiertas</div>
-        <div class="stat-value">8 <small>/8</small></div>
-        <div class="stat-note text-success">
-          <i class="bi bi-check-circle me-1"></i>100% de disciplinas activas
+      <div class="pf-stat">
+        <div class="pf-stat-top">
+          <span class="pf-stat-label">Activos en clases</span>
+          <span class="pf-icono ico-ok"><i class="bi bi-check-circle-fill"></i></span>
         </div>
+        <div class="pf-valor">12</div>
+        <div class="pf-stat-pie"><span>En actividad este ciclo</span><strong class="ok">85.7%</strong></div>
+        <div class="pf-barra ok"><span style="width: 85.7%"></span></div>
       </div>
     </div>
 
     <div class="col-12 col-sm-6 col-xl-3">
-      <div class="stat-card tone-navy">
-        <span class="stat-icon"><i class="bi bi-people-fill"></i></span>
-        <div class="stat-label">Alumnos a cargo</div>
-        <div class="stat-value">142</div>
-        <div class="stat-note text-primary">~11.8 <span class="text-dark fw-semibold">promedio por docente</span></div>
+      <div class="pf-stat">
+        <div class="pf-stat-top">
+          <span class="pf-stat-label">Maestrías cubiertas</span>
+          <span class="pf-icono ico-ama"><i class="bi bi-award-fill"></i></span>
+        </div>
+        <div class="pf-valor">8 <small>/ 8</small></div>
+        <div class="pf-stat-pie"><span>Disciplinas activas</span><strong>100%</strong></div>
+        <div class="pf-barra ama"><span style="width: 100%"></span></div>
       </div>
     </div>
+
+    <div class="col-12 col-sm-6 col-xl-3">
+      <div class="pf-stat">
+        <div class="pf-stat-top">
+          <span class="pf-stat-label">Alumnos a cargo</span>
+          <span class="pf-icono ico-rojo"><i class="bi bi-people-fill"></i></span>
+        </div>
+        <div class="pf-valor">142</div>
+        <div class="pf-stat-pie"><span>Promedio por docente</span><strong>~11.8</strong></div>
+        <div class="pf-barra rojo"><span style="width: 62%"></span></div>
+      </div>
+    </div>
+
   </div>
 
   <!-- Tabla -->
-  <div class="card shadow-sm border-0 rounded-4 overflow-hidden">
-    <div class="card-header bg-white d-flex justify-content-between align-items-center py-3">
-      <h5 class="mb-0 fw-bold"><i class="bi bi-person-badge me-2"></i>Listado de profesores</h5>
+  <section class="pf-panel">
+
+    <div class="pf-panel-head">
+      <div class="d-flex align-items-center gap-3">
+        <span class="pf-icono ico-neg"><i class="bi bi-person-badge"></i></span>
+        <div>
+          <h2 class="pf-panel-titulo">Listado de profesores</h2>
+          <p class="pf-panel-sub">Plantel docente de la Liga Internacional Pa-Kua · Central Jujuy</p>
+        </div>
+      </div>
+
+      <div class="pf-tabs">
+        <button type="button" class="activa">Todos</button>
+        <button type="button">Activos</button>
+        <button type="button">Licencia</button>
+      </div>
+    </div>
+
+    <!-- Barra de herramientas -->
+    <div class="pf-tools">
+      <div class="pf-buscar">
+        <i class="bi bi-search"></i>
+        <input type="text" placeholder="Buscar por nombre, documento o email...">
+      </div>
+
+      <select class="pf-filtro" aria-label="Filtrar por especialización">
+        <option value="">Todas las especializaciones</option>
+        <option>Arte Marcial</option>
+        <option>Arquería</option>
+        <option>Acrobacia</option>
+        <option>Armas de corte</option>
+        <option>Pa-Kua Ritmo</option>
+        <option>Pa-Kua Chi</option>
+        <option>Sintonía Yoga chino</option>
+        <option>  Cosmodinamia Tai-Chi</option>
+      </select>
     </div>
 
     <div class="table-responsive">
-      <table class="table table-hover align-middle mb-0 tabla-profes">
+      <table class="table align-middle mb-0 pf-tabla">
         <thead>
           <tr>
             <th>ID</th>
@@ -84,53 +131,115 @@
           </tr>
         </thead>
         <tbody>
+
           <tr>
-            <td class="text-muted">#1</td>
+            <td class="pf-id">#1</td>
             <td>
               <div class="d-flex align-items-center gap-3">
-                <span class="avatar">MQ</span>
+                
                 <div>
-                  <div class="fw-semibold">Martín Quispe</div>
-                  <small class="text-muted">martin.quispe@ejemplo.com</small>
+                  <div class="pf-nombre">Martín Quispe</div>
+                  <small class="pf-mail">martin.quispe@ejemplo.com</small>
                 </div>
               </div>
             </td>
             <td>30.456.789</td>
-            <td><i class="bi bi-telephone me-1 text-muted"></i>388 455-1234</td>
-            <td><span class="grado">Cinturón negro 3° Dan</span></td>
-            <td>Defensa personal</td>
-            <td><span class="badge rounded-pill text-bg-success">Activo</span></td>
+            <td><i class="bi bi-telephone me-1 pf-ico-gris"></i>388 455-1234</td>
+            <td><span class="pf-grado">Cinturón negro 3° Dan</span></td>
+            <td><span class="pf-esp">Arte Marcial</span></td>
+            <td><span class="pf-estado activo"><i class="bi bi-circle-fill"></i> Activo</span></td>
             <td class="text-end">
-              <button class="btn btn-sm btn-outline-secondary" title="Ver"><i class="bi bi-eye"></i></button>
-              <button class="btn btn-sm btn-outline-primary" title="Editar"><i class="bi bi-pencil"></i></button>
-              <button class="btn btn-sm btn-outline-danger" title="Eliminar"><i class="bi bi-trash"></i></button>
+              <button class="pf-accion" title="Ver"><i class="bi bi-eye"></i></button>
+              <button class="pf-accion" title="Editar"><i class="bi bi-pencil"></i></button>
+              <button class="pf-accion peligro" title="Eliminar"><i class="bi bi-trash"></i></button>
             </td>
           </tr>
+
           <tr>
-            <td class="text-muted">#2</td>
+            <td class="pf-id">#2</td>
             <td>
               <div class="d-flex align-items-center gap-3">
-                <span class="avatar">LF</span>
+                
                 <div>
-                  <div class="fw-semibold">Lucía Fernández</div>
-                  <small class="text-muted">lucia.fernandez@ejemplo.com</small>
+                  <div class="pf-nombre">Lucía Fernández</div>
+                  <small class="pf-mail">lucia.fernandez@ejemplo.com</small>
                 </div>
               </div>
             </td>
             <td>33.987.654</td>
-            <td><i class="bi bi-telephone me-1 text-muted"></i>388 477-5678</td>
-            <td><span class="grado">Cinturón negro 1° Dan</span></td>
-            <td>Armas tradicionales</td>
-            <td><span class="badge rounded-pill text-bg-warning">Licencia</span></td>
+            <td><i class="bi bi-telephone me-1 pf-ico-gris"></i>388 477-5678</td>
+            <td><span class="pf-grado">Cinturón negro 1° Dan</span></td>
+            <td><span class="pf-esp">Armas de corte</span></td>
+            <td><span class="pf-estado licencia"><i class="bi bi-circle-fill"></i> Licencia</span></td>
             <td class="text-end">
-              <button class="btn btn-sm btn-outline-secondary" title="Ver"><i class="bi bi-eye"></i></button>
-              <button class="btn btn-sm btn-outline-primary" title="Editar"><i class="bi bi-pencil"></i></button>
-              <button class="btn btn-sm btn-outline-danger" title="Eliminar"><i class="bi bi-trash"></i></button>
+              <button class="pf-accion" title="Ver"><i class="bi bi-eye"></i></button>
+              <button class="pf-accion" title="Editar"><i class="bi bi-pencil"></i></button>
+              <button class="pf-accion peligro" title="Eliminar"><i class="bi bi-trash"></i></button>
             </td>
           </tr>
+
+          <tr>
+            <td class="pf-id">#3</td>
+            <td>
+              <div class="d-flex align-items-center gap-3">
+                
+                <div>
+                  <div class="pf-nombre">Valeria Solís</div>
+                  <small class="pf-mail">valeria.solis@ejemplo.com</small>
+                </div>
+              </div>
+            </td>
+            <td>35.112.348</td>
+            <td><i class="bi bi-telephone me-1 pf-ico-gris"></i>388 466-9012</td>
+            <td><span class="pf-grado">Cinturón negro 2° Dan</span></td>
+            <td><span class="pf-esp">Sintonía Yoga chino</span></td>
+            <td><span class="pf-estado activo"><i class="bi bi-circle-fill"></i> Activo</span></td>
+            <td class="text-end">
+              <button class="pf-accion" title="Ver"><i class="bi bi-eye"></i></button>
+              <button class="pf-accion" title="Editar"><i class="bi bi-pencil"></i></button>
+              <button class="pf-accion peligro" title="Eliminar"><i class="bi bi-trash"></i></button>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="pf-id">#4</td>
+            <td>
+              <div class="d-flex align-items-center gap-3">
+                
+                <div>
+                  <div class="pf-nombre">Marcelo Ríos</div>
+                  <small class="pf-mail">marcelo.rios@ejemplo.com</small>
+                </div>
+              </div>
+            </td>
+            <td>28.774.201</td>
+            <td><i class="bi bi-telephone me-1 pf-ico-gris"></i>388 433-7788</td>
+            <td><span class="pf-grado">Cinturón negro 4° Dan</span></td>
+            <td><span class="pf-esp">Cosmodinamia Tai-Chi</span></td>
+            <td><span class="pf-estado activo"><i class="bi bi-circle-fill"></i> Activo</span></td>
+            <td class="text-end">
+              <button class="pf-accion" title="Ver"><i class="bi bi-eye"></i></button>
+              <button class="pf-accion" title="Editar"><i class="bi bi-pencil"></i></button>
+              <button class="pf-accion peligro" title="Eliminar"><i class="bi bi-trash"></i></button>
+            </td>
+          </tr>
+
         </tbody>
       </table>
     </div>
-  </div>
+
+    <!-- Pie con paginación -->
+    <div class="pf-pie">
+      <small>Mostrando 1 a 4 de 1245 profesores</small>
+      <nav class="pf-paginas" aria-label="Paginación">
+        <button type="button" aria-label="Anterior"><i class="bi bi-chevron-left"></i></button>
+        <button type="button" class="activa">1</button>
+        <button type="button">2</button>
+        <button type="button">3</button>
+        <button type="button" aria-label="Siguiente"><i class="bi bi-chevron-right"></i></button>
+      </nav>
+    </div>
+
+  </section>
 
 </div>
