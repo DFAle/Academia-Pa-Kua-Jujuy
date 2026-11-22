@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
-import { Login } from './auth/login/login';
-
+import { TablaProfesores } from './Forms/tabla-profesores/tabla-profesores';
 
 export const routes: Routes = [
-    //{path: '', redirectTo: 'login', pathMatch: 'full'},
-    {path:'Login',component: Login},    
+    //{path:"",redirectTo:"gestion-profesores",pathMatch:"full"},   //cambiar por home
+    //{path:"gestion-profesores",component:TablaProfesores},
+      {path:'Login',component: Login}    
 ];
