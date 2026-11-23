@@ -7,10 +7,10 @@ import { TablaAlumnos } from './Tables/tabla-alumnos/tabla-alumnos';
 
 export const routes: Routes = [
     {path:"",redirectTo:"home",pathMatch:"full"},   //cambiar por home
-      {path:"gestionprofesores",component:TablaProfesores},
-      {path:"gestionprofesores/registerProfesor",component:RegisterProfesor},   
-      {path:'Login',component: Login},
-      {path:'home',component: Home},
-      {path:"gestionAlumnos",component:TablaAlumnos},
+    {path:"gestionprofesores",component:TablaProfesores},
+    {path:"gestionprofesores/registerProfesor",component:RegisterProfesor},   
+    {path:'Login',component: Login},
+    {path:'home',component: Home},
+    {path:"gestionAlumnos",component:TablaAlumnos},
       
 ];
