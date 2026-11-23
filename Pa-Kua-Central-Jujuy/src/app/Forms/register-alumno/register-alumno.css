@@ -1,0 +1,366 @@
+.reg-wrap {
+  max-width: 1000px;
+  --pk-amarillo: #ffe600;
+  --pk-amarillo-suave: #fff9c2;
+  --pk-rojo: #e8222e;
+  --pk-rojo-oscuro: #b3131d;
+  --pk-negro: #141414;
+}
+
+.reg-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  background: #fff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(20, 20, 20, .18);
+  animation: aparecer .45s ease both;
+}
+
+/* barra tricolor arriba de todo */
+.reg-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  z-index: 3;
+  background: linear-gradient(90deg,
+    var(--pk-rojo) 0 33.33%,
+    var(--pk-amarillo) 33.33% 66.66%,
+    var(--pk-negro) 66.66% 100%);
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Panel lateral ---------- */
+.reg-side {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 1.75rem 1.5rem;
+  color: #fff;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(255, 230, 0, .22) 0, transparent 45%),
+    radial-gradient(circle at 100% 100%, rgba(232, 34, 46, .45) 0, transparent 50%),
+    var(--pk-negro);
+}
+
+.side-logo {
+  width: 130px;
+  height: 130px;
+  background: #fff;
+  border-radius: 24px;
+  padding: .5rem;
+  margin-bottom: 1.25rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 4px var(--pk-amarillo), 0 12px 28px rgba(0, 0, 0, .5);
+}
+
+.side-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 18px;
+}
+
+.side-contenido { position: relative; z-index: 1; }
+
+.side-etiqueta {
+  display: inline-block;
+  background: var(--pk-rojo);
+  color: #fff;
+  padding: .3rem .85rem;
+  border-radius: 999px;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.side-titulo {
+  font-weight: 800;
+  font-size: 1.9rem;
+  line-height: 1.15;
+  margin: 1rem 0 .65rem;
+}
+
+/* la primera línea ("Registrar") en amarillo */
+.side-titulo::first-line {
+  color: var(--pk-amarillo);
+}
+
+.side-texto {
+  font-size: .86rem;
+  color: rgba(255, 255, 255, .7);
+  margin-bottom: 1.5rem;
+}
+
+.side-pasos {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: .75rem;
+}
+
+.side-pasos li {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  font-size: .9rem;
+  font-weight: 500;
+}
+
+.side-pasos li span {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: rgba(255, 230, 0, .12);
+  border: 1px solid rgba(255, 230, 0, .45);
+  color: var(--pk-amarillo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.side-pie {
+  position: relative;
+  z-index: 1;
+  font-size: .72rem;
+  color: rgba(255, 255, 255, .45);
+}
+
+/* ---------- Formulario ---------- */
+.reg-form {
+  padding: 1.75rem 2rem 1.5rem;
+}
+
+.form-grupo {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  font-size: .78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--pk-negro);
+  margin-bottom: .7rem;
+}
+
+.form-grupo i {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  background: var(--pk-amarillo);
+  color: var(--pk-negro);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .8rem;
+}
+
+.form-grupo::after {
+  content: "";
+  flex: 1;
+  height: 2px;
+  background: repeating-linear-gradient(90deg, #d9d9de 0 6px, transparent 6px 11px);
+}
+
+/* ---------- Inputs compactos ---------- */
+.reg-form .form-floating > .form-control,
+.reg-form .form-floating > .form-select {
+  height: calc(3rem + 2px);
+  min-height: calc(3rem + 2px);
+  padding: 1.35rem .75rem .35rem;
+  font-size: .92rem;
+  line-height: 1.2;
+}
+
+.reg-form .form-floating > label {
+  padding: .75rem;
+  color: #9a9aa3;
+  font-size: .88rem;
+}
+
+.reg-form .form-control {
+  border: 1.5px solid #e4e4e8;
+  border-radius: 12px;
+  background: #fafafa;
+  transition: border-color .15s, box-shadow .15s, background-color .15s;
+}
+
+.reg-form .form-control:hover:not(:focus) {
+  border-color: #c9c9cf;
+}
+
+.reg-form .form-control:focus {
+  background: #fff;
+  border-color: var(--pk-negro);
+  box-shadow: 0 0 0 .25rem rgba(255, 230, 0, .55);
+}
+
+.reg-form .form-floating > .form-control:focus ~ label,
+.reg-form .form-floating > .form-control:not(:placeholder-shown) ~ label {
+  color: var(--pk-rojo);
+}
+
+/* ---------- Select (mismo look que los inputs) ---------- */
+.reg-form .form-select {
+  border: 1.5px solid #e4e4e8;
+  border-radius: 12px;
+  background-color: #fafafa;
+  transition: border-color .15s, box-shadow .15s, background-color .15s;
+}
+
+.reg-form .form-select:hover:not(:focus) {
+  border-color: #c9c9cf;
+}
+
+.reg-form .form-select:focus {
+  background-color: #fff;
+  border-color: var(--pk-negro);
+  box-shadow: 0 0 0 .25rem rgba(255, 230, 0, .55);
+}
+
+.reg-form .form-floating > .form-select:focus ~ label,
+.reg-form .form-floating > .form-select:valid ~ label {
+  color: var(--pk-rojo);
+}
+
+/* ---------- Chips ---------- */
+.chips-label {
+  font-size: .78rem;
+  font-weight: 700;
+  color: var(--pk-negro);
+  margin-bottom: .45rem;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+}
+
+.chip {
+  padding: .35rem .8rem;
+  border: 1.5px solid #e4e4e8;
+  border-radius: 999px;
+  background: #fff;
+  font-size: .8rem;
+  font-weight: 500;
+  color: #2b2b30;
+  cursor: pointer;
+  user-select: none;
+  transition: all .15s;
+}
+
+.chip:hover {
+  border-color: var(--pk-negro);
+  background: var(--pk-amarillo-suave);
+  transform: translateY(-1px);
+}
+
+.btn-check:checked + .chip {
+  background: var(--pk-negro);
+  border-color: var(--pk-negro);
+  color: var(--pk-amarillo);
+  font-weight: 700;
+  box-shadow: 3px 3px 0 var(--pk-rojo);
+}
+
+.btn-check:focus-visible + .chip {
+  outline: 2px solid var(--pk-rojo);
+  outline-offset: 2px;
+}
+
+/* ---------- Chips de pago con porcentaje ---------- */
+.chips-pago .chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+}
+
+.chip-pct {
+  background: var(--pk-amarillo-suave);
+  color: var(--pk-rojo-oscuro);
+  font-weight: 800;
+  font-size: .68rem;
+  padding: .05rem .45rem;
+  border-radius: 999px;
+  border: 1px solid rgba(179, 19, 29, .25);
+}
+
+.btn-check:checked + .chip .chip-pct {
+  background: var(--pk-amarillo);
+  color: var(--pk-negro);
+  border-color: var(--pk-amarillo);
+}
+
+/* ---------- Botones ---------- */
+.reg-acciones {
+  display: flex;
+  justify-content: flex-end;
+  gap: .6rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eeeef1;
+}
+
+.reg-acciones .btn {
+  border-radius: 12px;
+  padding: .55rem 1.3rem;
+  font-weight: 700;
+}
+
+.btn-cancelar {
+  background: transparent;
+  color: #6b6b75;
+  border: 1.5px solid #e4e4e8;
+}
+
+.btn-cancelar:hover {
+  background: #f6f6f7;
+  color: var(--pk-negro);
+  border-color: #c9c9cf;
+}
+
+.btn-registrar {
+  background: linear-gradient(120deg, var(--pk-rojo), var(--pk-rojo-oscuro));
+  color: #fff;
+  border: 2px solid var(--pk-negro);
+  box-shadow: 4px 4px 0 var(--pk-negro);
+  transition: transform .15s, box-shadow .15s, background .15s, color .15s;
+}
+
+.btn-registrar:hover {
+  background: var(--pk-amarillo);
+  color: var(--pk-negro);
+  border-color: var(--pk-negro);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--pk-negro);
+}
+
+.btn-registrar:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--pk-negro);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+  .reg-card { grid-template-columns: 1fr; }
+  .reg-side { padding: 1.5rem 1.5rem 1.25rem; }
+  .side-pasos, .side-pie { display: none; }
+  .side-texto { margin-bottom: 0; }
+  .reg-form { padding: 1.25rem 1.5rem; }
+  .side-logo { width: 100px; height: 100px; margin-bottom: 1rem; }
+}
