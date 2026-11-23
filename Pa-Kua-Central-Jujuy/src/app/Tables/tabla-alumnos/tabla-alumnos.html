@@ -1,0 +1,298 @@
+<div class="container-fluid al-wrap">
+
+  <!-- ===== Encabezado ===== -->
+  <header class="al-head">
+    <div>
+      <div class="al-migas">
+        <span>SEDE CENTRAL JUJUY</span>
+        <i class="bi bi-chevron-right"></i>
+        <span>GESTIÓN ACADÉMICA</span>
+        <i class="bi bi-chevron-right"></i>
+        <strong>PADRÓN DE ALUMNOS</strong>
+      </div>
+
+      <div class="al-titulo-fila">
+        <h1 class="al-titulo">Gestión de Alumnos</h1>
+        <span class="al-ciclo"><i class="bi bi-circle-fill"></i> Ciclo Lectivo Activo • Noviembre 2026</span>
+      </div>
+    </div>
+
+    <div class="al-acciones">
+      <button class="btn al-btn-sec"><i class="bi bi-download me-1"></i> Exportar Padrón</button>
+      <button class="btn al-btn-sec"><i class="bi bi-arrow-left-right me-1"></i> Reasignación Rápida</button>
+      <a class="btn al-btn-main" routerLink="/gestionalumnos/registerAlumno">
+        <i class="bi bi-plus-circle me-1"></i> Nueva Matrícula
+      </a>
+    </div>
+  </header>
+
+  <!-- ===== Tarjetas ===== -->
+  <div class="row g-3 mb-4">
+
+    <!-- Total -->
+    <div class="col-12 col-sm-6 col-xl-3">
+      <div class="al-stat">
+        <div class="al-stat-top">
+          <span class="al-stat-label">Total en Padrón Activo</span>
+          <span class="al-icono ico-neg"><i class="bi bi-people-fill"></i></span>
+        </div>
+        <div class="al-valor">142</div>
+        <div class="al-stat-pie">
+          <strong class="ok"><i class="bi bi-graph-up-arrow me-1"></i>83% Regulares</strong>
+          <span>118 al día</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Matrículas nuevas -->
+    <div class="col-12 col-sm-6 col-xl-3">
+      <div class="al-stat al-stat-prof">
+        <div class="al-stat-top">
+          <span class="al-stat-label">Matrículas nuevas</span>
+          <span class="al-icono ico-neg"><i class="bi bi-person-plus-fill"></i></span>
+        </div>
+        <div class="al-valor">12 <small>Alumnos</small></div>
+        <div class="al-stat-pie al-align-center">
+          <strong>Este mes</strong>
+          <span class="al-pildora">8.5% del padrón</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Semáforo -->
+    <div class="col-12 col-sm-6 col-xl-3">
+      <div class="al-stat">
+        <div class="al-stat-top">
+          <span class="al-stat-label">Alumnos Activos,Irregular e Inactivos</span>
+          <span class="al-icono ico-neg"><i class="bi bi-traffic-light-fill"></i></span>
+        </div>
+        <div class="al-semaforo">
+          <span class="al-sem verde"><strong>118</strong> <i class="bi bi-circle-fill"></i></span>
+          <span class="al-sem amarillo"><strong>16</strong> <i class="bi bi-circle-fill"></i></span>
+          <span class="al-sem rojo"><strong>8</strong> <i class="bi bi-circle-fill"></i></span>
+        </div>
+        <div class="al-stat-pie">
+          <span>Tasa de morosidad:</span>
+          <strong class="aviso">17% pendiente</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cierre mensual -->
+    <div class="col-12 col-sm-6 col-xl-3">
+      <div class="al-stat">
+        <div class="al-stat-top">
+          <span class="al-stat-label">Cierre y Auditoría Mensual</span>
+          <span class="al-icono ico-ama"><i class="bi bi-calendar-check"></i></span>
+        </div>
+        <div class="al-valor al-valor-md">Día 30 de Ciclo</div>
+        <div class="al-stat-pie">
+          <span><i class="bi bi-clock me-1"></i>Faltan 12 días</span>
+          <strong>94 clases dadas hoy</strong>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===== Panel de filtros ===== -->
+  <section class="al-filtros">
+
+    <div class="row g-3 align-items-end">
+      <!-- Profesor a cargo -->
+      <div class="col-12 col-lg-6">
+        <div class="al-campo-head">
+          <label class="al-campo-label" for="fProfesor">
+            <i class="bi bi-person-badge-fill"></i> Filtrar por Profesor a Cargo
+          </label>
+          <a href="javascript:void(0)" class="al-link">Mostrar Todos</a>
+        </div>
+        <div class="al-select-wrap">
+          <i class="bi bi-person-badge al-select-ico"></i>
+          <select id="fProfesor" class="al-select">
+            <option value="">Todos los profesores (142 alumnos)</option>
+            <option selected>Facundo Gómez — Sintonía Yoga Chino / Pa-Kua Chi (48 alumnos a cargo)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Búsqueda inteligente -->
+      <div class="col-12 col-lg-6">
+        <div class="al-campo-head">
+          <label class="al-campo-label" for="fBuscar">Búsqueda Inteligente de Alumno</label>
+        </div>
+        <div class="al-buscar">
+          <i class="bi bi-search"></i>
+          <input id="fBuscar" type="text" placeholder="Buscar por Nombre, Apellido o DNI ">
+        </div>
+      </div>
+    </div>
+
+    <!-- Estado de alumnos -->
+    <div class="al-grupo">
+      <span class="al-grupo-label">ALUMNOS:</span>
+      <button type="button" class="al-chip activa">Todos (142)</button>
+      <button type="button" class="al-chip c-verde"><i class="punto"></i> Activos (118)</button>
+      <button type="button" class="al-chip c-amarillo"><i class="punto"></i> Irregulares (16)</button>
+      <button type="button" class="al-chip c-rojo"><i class="punto"></i> Inactivos (8)</button>
+    </div>
+
+  </section>
+
+  <!-- ===== Tabla ===== -->
+  <section class="al-panel">
+
+    <div class="al-panel-head">
+      <div class="d-flex align-items-center gap-3">
+        <span class="al-icono ico-neg"><i class="bi bi-person-lines-fill"></i></span>
+        <div>
+          <h2 class="al-panel-titulo">Listado de alumnos</h2>
+          <p class="al-panel-sub">Liga Internacional Pa-Kua · Central Jujuy</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table align-middle mb-0 al-tabla">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Alumno</th>
+            <th>Edad</th>
+            <th>Sexo</th>
+            <th>Fecha de nacimiento</th>
+            <th>Documento</th>
+            <th>Teléfono</th>
+            <th>Estado</th>
+            <th>País</th>
+            <th>Provincia</th>
+            <th>Domicilio</th>
+            <th>Dirección</th>
+            <th class="text-end">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td class="al-id">#1</td>
+            <td>
+              <div class="al-persona">
+                <span class="al-persona-nombre">Tomás Vilte</span>
+                <span class="al-persona-mail">tomas.vilte@ejemplo.com</span>
+              </div>
+            </td>
+            <td><span class="al-edad">14</span></td>
+            <td><span class="al-sexo m"><i class="bi bi-gender-male"></i> Masculino</span></td>
+            <td>15/03/2012</td>
+            <td>52.118.430</td>
+            <td><i class="bi bi-telephone me-1 al-ico-gris"></i>388 411-2345</td>
+            
+            <td><span class="al-estado regular"><i class="bi bi-circle-fill"></i> Activo regular</span></td>
+            <td>Argentina</td>
+            <td>Jujuy</td>
+            <td>Av. Bolivia 1250</td>
+            <td>Barrio Ciudad de Nieva</td>
+            <td class="text-end">
+              <button class="al-accion" title="Ver"><i class="bi bi-eye"></i></button>
+              <button class="al-accion" title="Editar"><i class="bi bi-pencil"></i></button>
+              <button class="al-accion peligro" title="Eliminar"><i class="bi bi-trash"></i></button>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="al-id">#2</td>
+            <td>
+              <div class="al-persona">
+                <span class="al-persona-nombre">Camila Guzmán</span>
+                <span class="al-persona-mail">camila.guzman@ejemplo.com</span>
+              </div>
+            </td>
+            <td><span class="al-edad">21</span></td>
+            <td><span class="al-sexo f"><i class="bi bi-gender-female"></i> Femenino</span></td>
+            <td>22/08/2005</td>
+            <td>45.887.112</td>
+            <td><i class="bi bi-telephone me-1 al-ico-gris"></i>388 422-7788</td>
+            
+            <td><span class="al-estado irregular"><i class="bi bi-circle-fill"></i> Activo irregular</span></td>
+            <td>Argentina</td>
+            <td>Jujuy</td>
+            <td>Calle Belgrano 480</td>
+            <td>Centro, San Salvador de Jujuy</td>
+            <td class="text-end">
+              <button class="al-accion" title="Ver"><i class="bi bi-eye"></i></button>
+              <button class="al-accion" title="Editar"><i class="bi bi-pencil"></i></button>
+              <button class="al-accion peligro" title="Eliminar"><i class="bi bi-trash"></i></button>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="al-id">#3</td>
+            <td>
+              <div class="al-persona">
+                <span class="al-persona-nombre">Sofía Condorí</span>
+                <span class="al-persona-mail">sofia.condori@ejemplo.com</span>
+              </div>
+            </td>
+            <td><span class="al-edad">8</span></td>
+            <td><span class="al-sexo f"><i class="bi bi-gender-female"></i> Femenino</span></td>
+            <td>10/01/2018</td>
+            <td>58.302.677</td>
+            <td><i class="bi bi-telephone me-1 al-ico-gris"></i>388 455-3021</td>
+            
+            <td><span class="al-estado regular"><i class="bi bi-circle-fill"></i> Activo regular</span></td>
+            <td>Argentina</td>
+            <td>Jujuy</td>
+            <td>Pasaje Los Andes 92</td>
+            <td>Barrio Alto Comedero</td>
+            <td class="text-end">
+              <button class="al-accion" title="Ver"><i class="bi bi-eye"></i></button>
+              <button class="al-accion" title="Editar"><i class="bi bi-pencil"></i></button>
+              <button class="al-accion peligro" title="Eliminar"><i class="bi bi-trash"></i></button>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="al-id">#4</td>
+            <td>
+              <div class="al-persona">
+                <span class="al-persona-nombre">Ramiro Mamaní</span>
+                <span class="al-persona-mail">ramiro.mamani@ejemplo.com</span>
+              </div>
+            </td>
+            <td><span class="al-edad">31</span></td>
+            <td><span class="al-sexo m"><i class="bi bi-gender-male"></i> Masculino</span></td>
+            <td>04/07/1995</td>
+            <td>39.774.215</td>
+            <td><i class="bi bi-telephone me-1 al-ico-gris"></i>387 466-9034</td>
+            
+            <td><span class="al-estado inactivo"><i class="bi bi-circle-fill"></i> Inactivo</span></td>
+            <td>Argentina</td>
+            <td>Salta</td>
+            <td>Av. San Martín 1875</td>
+            <td>Barrio Tres Cerritos</td>
+            <td class="text-end">
+              <button class="al-accion" title="Ver"><i class="bi bi-eye"></i></button>
+              <button class="al-accion" title="Editar"><i class="bi bi-pencil"></i></button>
+              <button class="al-accion peligro" title="Eliminar"><i class="bi bi-trash"></i></button>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Pie / paginación -->
+    <div class="al-pie">
+      <small>Mostrando 1 a 4 de 142 alumnos</small>
+      <nav class="al-paginas" aria-label="Paginación">
+        <button type="button" aria-label="Anterior"><i class="bi bi-chevron-left"></i></button>
+        <button type="button" class="activa">1</button>
+        <button type="button">2</button>
+        <button type="button">3</button>
+        <button type="button" aria-label="Siguiente"><i class="bi bi-chevron-right"></i></button>
+      </nav>
+    </div>
+
+  </section>
+
+</div>
