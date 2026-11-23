@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-profesor',
@@ -8,4 +9,13 @@ import { Component } from '@angular/core';
 })
 export class RegisterProfesor {
 
+
+    constructor(private router: Router) {
+
+     }
+
+
+  volver() {
+    this.router.navigate(['/gestionprofesores']);
+  }
 }
