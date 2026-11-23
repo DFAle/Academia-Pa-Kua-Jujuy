@@ -1,0 +1,5 @@
+.page-content {
+  /* Si tu nav es position: fixed, necesitás padding-top igual o mayor al alto del nav + aire extra */
+  padding-top: 5px;
+  padding-bottom: 24px;
+}
