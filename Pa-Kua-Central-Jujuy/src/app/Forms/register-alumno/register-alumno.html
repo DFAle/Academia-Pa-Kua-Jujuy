@@ -1,6 +1,7 @@
 <br><br><br>
 <div class="container reg-wrap">
   <div class="reg-card">
+
     <!-- Panel lateral -->
     <aside class="reg-side">
       <div class="side-contenido">
@@ -8,161 +9,440 @@
           <img src="logo-pakua.png" alt="Pa-Kua Liga Internacional Central Jujuy">
         </div>
         <span class="side-etiqueta"><i class="bi bi-person-plus-fill me-1"></i>Nuevo ingreso</span>
-        <h2 class="side-titulo">Registrar<br>Alumno</h2>
+        <h2 class="side-titulo">Registrar<br>alumno</h2>
         <p class="side-texto">
-          Sumá un nuevo alumno a la academia, asignale su profesor y su método de pago.
+          Sumá un nuevo alumno a la academia, inscribilo en una o más clases y registrá cuándo y cómo pagó.
         </p>
-
         <ul class="side-pasos">
           <li><span><i class="bi bi-person"></i></span> Datos personales</li>
           <li><span><i class="bi bi-envelope"></i></span> Contacto y ubicación</li>
-          <li><span><i class="bi bi-award"></i></span> Profesor y pago</li>
+          <li><span><i class="bi bi-shield-check"></i></span> Tutor (si es menor)</li>
+          <li><span><i class="bi bi-calendar2-week"></i></span> Clases y pago</li>
         </ul>
       </div>
-
-      <div class="side-pie">Método Pa-Kua · Gestión de academia</div>
+      <div class="side-pie">Método Pa-Kua, gestión de academia</div>
     </aside>
 
     <!-- Formulario -->
     <form class="reg-form">
 
-      <!-- DATOS PERSONALES -->
-      <h5 class="form-grupo"><i class="bi bi-person-vcard"></i> Datos personales</h5>
-      <div class="row g-2 mb-3">
-        <div class="col-md-6">
-          <div class="form-floating">
-            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>
-            <label for="nombre">Nombre</label>
+      <div class="reg-cols">
+
+        <!-- ================= COLUMNA IZQUIERDA ================= -->
+        <div class="col-izq">
+
+          <!-- DATOS PERSONALES -->
+          <h5 class="form-grupo"><i class="bi bi-person-vcard"></i> Datos personales</h5>
+          <div class="row g-2">
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>
+                <label for="nombre">Nombre</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido" required>
+                <label for="apellido">Apellido</label>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-floating">
+                <input type="text" class="form-control" id="documento" name="documento" placeholder="Documento" required inputmode="numeric">
+                <label for="documento">Documento</label>
+              </div>
+            </div>
+            <div class="col-md-5">
+              <div class="form-floating">
+                <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento" placeholder="Fecha de nacimiento" required>
+                <label for="fechaNacimiento">Fecha de nacimiento</label>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-floating">
+                <input type="number" class="form-control" id="edad" name="edad" placeholder="Edad" required min="0" max="120">
+                <label for="edad">Edad</label>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="col-md-6">
-          <div class="form-floating">
-            <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido" required>
-            <label for="apellido">Apellido</label>
+
+          <!-- CONTACTO Y UBICACIÓN -->
+          <h5 class="form-grupo"><i class="bi bi-chat-dots"></i> Contacto y ubicación</h5>
+          <div class="row g-2">
+            <div class="col-md-5">
+              <div class="form-floating">
+                <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Teléfono" required>
+                <label for="telefono">Teléfono</label>
+              </div>
+            </div>
+            <div class="col-md-7">
+              <div class="form-floating">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                <label for="email">Email</label>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-floating">
+                <input type="text" class="form-control" id="pais" name="pais" placeholder="País" required>
+                <label for="pais">País</label>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-floating">
+                <input type="text" class="form-control" id="provincia" name="provincia" placeholder="Provincia" required>
+                <label for="provincia">Provincia</label>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-floating">
+                <input type="text" class="form-control" id="ciudad" name="ciudad" placeholder="Ciudad" required>
+                <label for="ciudad">Ciudad</label>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-floating">
+                <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Dirección (domicilio)" required>
+                <label for="direccion">Dirección (domicilio)</label>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="col-md-5">
-          <div class="form-floating">
-            <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento" placeholder="Fecha de nacimiento" required>
-            <label for="fechaNacimiento">Fecha de nacimiento</label>
+
+          <!-- INTERRUPTOR menor de edad (debe ir justo antes del panel del tutor) -->
+          <input type="checkbox" class="menor-check" id="esMenor" name="esMenor">
+          <label class="menor-switch" for="esMenor">
+            <span class="menor-icono"><i class="bi bi-emoji-smile"></i></span>
+            <span class="menor-texto">
+              <strong>El alumno es menor de edad</strong>
+              <small>Vamos a pedir los datos de un tutor responsable</small>
+            </span>
+            <span class="menor-track"><span class="menor-thumb"></span></span>
+          </label>
+
+          <!-- TUTOR -->
+          <div class="tutor-panel">
+            <div class="row g-2">
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="tutorNombre" name="tutorNombre" placeholder="Nombre del tutor">
+                  <label for="tutorNombre">Nombre del tutor</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="tutorApellido" name="tutorApellido" placeholder="Apellido del tutor">
+                  <label for="tutorApellido">Apellido del tutor</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="tutorDni" name="tutorDni" placeholder="DNI del tutor" inputmode="numeric">
+                  <label for="tutorDni">DNI del tutor</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="tel" class="form-control" id="tutorTelefono" name="tutorTelefono" placeholder="Teléfono del tutor">
+                  <label for="tutorTelefono">Teléfono del tutor</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <select class="form-select" id="tutorParentesco" name="tutorParentesco">
+                    <option value="" selected disabled>Elegir...</option>
+                    <option>Madre</option><option>Padre</option><option>Abuelo/a</option>
+                    <option>Tío/a</option><option>Hermano/a mayor</option><option>Tutor legal</option><option>Otro</option>
+                  </select>
+                  <label for="tutorParentesco">Parentesco</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="email" class="form-control" id="tutorCorreo" name="tutorCorreo" placeholder="Email (opcional)">
+                  <label for="tutorCorreo">Email (opcional)</label>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="col-md-3">
-          <div class="form-floating">
-            <input type="number" min="0" max="120" class="form-control" id="edad" name="edad" placeholder="Edad" required>
-            <label for="edad">Edad</label>
+
+          <!-- CLASES (ahora debajo del interruptor de menor / tutor) -->
+          <h5 class="form-grupo"><i class="bi bi-award"></i> Clases</h5>
+
+          <p class="form-ayuda reparto-aviso">
+            <i class="bi bi-diagram-3"></i>
+            Repartí las clases del paquete entre las clases elegidas<span class="paq-total t-pg8 t-pp8"> (paquete de 8)</span><span class="paq-total t-pg12 t-pp12"> (paquete de 12)</span><span class="paq-total t-pg16 t-pp16"> (paquete de 16)</span><span class="paq-total t-pg20"> (paquete de 20)</span><span class="paq-total t-pg24"> (paquete de 24)</span><span class="paq-total t-pp4"> (paquete de 4)</span>. La suma de todas tiene que dar el total del paquete.
+          </p>
+
+          <div class="clases-grid">
+
+            <div class="clase-item">
+              <input type="checkbox" class="btn-check" name="clases" id="c-arte-marcial" value="arte-marcial">
+              <label class="clase-tile" for="c-arte-marcial">
+                <span class="clase-icono"><i class="bi bi-person-arms-up"></i></span>
+                <span class="clase-info">
+                  <strong>Arte Marcial</strong>
+                  <span class="clase-horario"><i class="bi bi-clock"></i> Lun y Mié, 18:00 a 19:30</span>
+                  <span class="clase-prof">Prof. Pérez, Juan</span>
+                  <span class="clase-cupo">
+                    <i class="bi bi-people"></i>
+                    <span class="cupo-texto"><b>12</b> de 20 alumnos</span>
+                    <span class="cupo-barra"><span style="width: 60%"></span></span>
+                  </span>
+                </span>
+                <span class="clase-check"><i class="bi bi-check-lg"></i></span>
+              </label>
+              <div class="clase-cant">
+                <label for="cant-arte-marcial">Clases con este profe</label>
+                <input type="number" id="cant-arte-marcial" name="cantArteMarcial" min="1" max="24" placeholder="0">
+              </div>
+            </div>
+
+            <div class="clase-item">
+              <input type="checkbox" class="btn-check" name="clases" id="c-pa-kua-chi" value="pa-kua-chi">
+              <label class="clase-tile" for="c-pa-kua-chi">
+                <span class="clase-icono"><i class="bi bi-yin-yang"></i></span>
+                <span class="clase-info">
+                  <strong>Pa-Kua Chi</strong>
+                  <span class="clase-horario"><i class="bi bi-clock"></i> Mar y Jue, 20:00 a 21:00</span>
+                  <span class="clase-prof">Prof. Gómez, Ana</span>
+                  <span class="clase-cupo">
+                    <i class="bi bi-people"></i>
+                    <span class="cupo-texto"><b>8</b> de 15 alumnos</span>
+                    <span class="cupo-barra"><span style="width: 53%"></span></span>
+                  </span>
+                </span>
+                <span class="clase-check"><i class="bi bi-check-lg"></i></span>
+              </label>
+              <div class="clase-cant">
+                <label for="cant-pa-kua-chi">Clases con este profe</label>
+                <input type="number" id="cant-pa-kua-chi" name="cantPaKuaChi" min="1" max="24" placeholder="0">
+              </div>
+            </div>
+
           </div>
+
+          <!-- Botón agregar clase -->
+          <details class="clase-extra">
+            <summary class="btn-agregar-clase">
+              <i class="bi bi-plus-circle"></i>
+              <span class="txt-abrir">Agregar clase</span>
+              <span class="txt-cerrar">Ocultar clases</span>
+            </summary>
+
+            <div class="clases-grid">
+
+              <div class="clase-item">
+                <input type="checkbox" class="btn-check" name="clases" id="c-arqueria" value="arqueria">
+                <label class="clase-tile" for="c-arqueria">
+                  <span class="clase-icono"><i class="bi bi-bullseye"></i></span>
+                  <span class="clase-info">
+                    <strong>Arquería</strong>
+                    <span class="clase-horario"><i class="bi bi-clock"></i> Mar, 17:00 a 18:30</span>
+                    <span class="clase-prof">Prof. a definir</span>
+                    <span class="clase-cupo">
+                      <i class="bi bi-people"></i>
+                      <span class="cupo-texto"><b>5</b> de 10 alumnos</span>
+                      <span class="cupo-barra"><span style="width: 50%"></span></span>
+                    </span>
+                  </span>
+                  <span class="clase-check"><i class="bi bi-check-lg"></i></span>
+                </label>
+                <div class="clase-cant">
+                  <label for="cant-arqueria">Clases con este profe</label>
+                  <input type="number" id="cant-arqueria" name="cantArqueria" min="1" max="24" placeholder="0">
+                </div>
+              </div>
+
+              <!-- Ejemplo de clase con el cupo completo: agregale la clase "cupo-lleno" -->
+              <div class="clase-item">
+                <input type="checkbox" class="btn-check" name="clases" id="c-acrobacia" value="acrobacia">
+                <label class="clase-tile" for="c-acrobacia">
+                  <span class="clase-icono"><i class="bi bi-activity"></i></span>
+                  <span class="clase-info">
+                    <strong>Acrobacia</strong>
+                    <span class="clase-horario"><i class="bi bi-clock"></i> Jue, 19:00 a 20:30</span>
+                    <span class="clase-prof">Prof. a definir</span>
+                    <span class="clase-cupo cupo-lleno">
+                      <i class="bi bi-people"></i>
+                      <span class="cupo-texto"><b>12</b> de 12 alumnos · Cupo completo</span>
+                      <span class="cupo-barra"><span style="width: 100%"></span></span>
+                    </span>
+                  </span>
+                  <span class="clase-check"><i class="bi bi-check-lg"></i></span>
+                </label>
+                <div class="clase-cant">
+                  <label for="cant-acrobacia">Clases con este profe</label>
+                  <input type="number" id="cant-acrobacia" name="cantAcrobacia" min="1" max="24" placeholder="0">
+                </div>
+              </div>
+
+            </div>
+          </details>
+
         </div>
-        <div class="col-md-4">
-          <div class="form-floating">
-            <input type="text" inputmode="numeric" class="form-control" id="documento" name="documento" placeholder="Documento" required>
-            <label for="documento">Documento</label>
+        <!-- /COLUMNA IZQUIERDA -->
+
+        <!-- ================= COLUMNA DERECHA ================= -->
+        <div class="col-der">
+
+          <!-- PAGO -->
+          <h5 class="form-grupo"><i class="bi bi-wallet2"></i> Pago</h5>
+
+          <!-- Tipo de pago -->
+          <p class="form-ayuda">Tipo de pago</p>
+          <div class="chips">
+            <input type="radio" class="btn-check" name="tipoPago" id="tp-ord" value="ordinario" checked>
+            <label class="chip" for="tp-ord"><i class="bi bi-arrow-repeat"></i> Ordinario <small class="chip-pct">recurrente</small></label>
+
+            <input type="radio" class="btn-check" name="tipoPago" id="tp-ext" value="extraordinario">
+            <label class="chip" for="tp-ext"><i class="bi bi-stars"></i> Extraordinario <small class="chip-pct">1 sola vez</small></label>
           </div>
+
+          <!-- ORDINARIO -->
+          <div class="bloque-ord">
+            <p class="form-ayuda">Modalidad de clases</p>
+            <div class="chips">
+              <input type="radio" class="btn-check" name="modalidad" id="mod-grupal" value="grupal" checked>
+              <label class="chip" for="mod-grupal"><i class="bi bi-people"></i> Grupal</label>
+
+              <input type="radio" class="btn-check" name="modalidad" id="mod-part" value="particular">
+              <label class="chip" for="mod-part"><i class="bi bi-person"></i> Particular</label>
+            </div>
+
+            <p class="form-ayuda">Formato de pago</p>
+            <div class="chips">
+              <input type="radio" class="btn-check" name="formatoPago" id="for-uni" value="unitario">
+              <label class="chip" for="for-uni">Unitario <small class="chip-pct">solo 1 día</small></label>
+
+              <input type="radio" class="btn-check" name="formatoPago" id="for-paq" value="paquete" checked>
+              <label class="chip" for="for-paq">Por paquete</label>
+            </div>
+
+            <!-- Paquetes grupal -->
+            <div class="paquetes paq-grupal">
+              <p class="form-ayuda">Cantidad de clases del paquete</p>
+              <div class="chips">
+                <input type="radio" class="btn-check" name="paqueteGrupal" id="pg8" value="8">
+                <label class="chip" for="pg8">8 clases</label>
+                <input type="radio" class="btn-check" name="paqueteGrupal" id="pg12" value="12">
+                <label class="chip" for="pg12">12 clases</label>
+                <input type="radio" class="btn-check" name="paqueteGrupal" id="pg16" value="16">
+                <label class="chip" for="pg16">16 clases</label>
+                <input type="radio" class="btn-check" name="paqueteGrupal" id="pg20" value="20">
+                <label class="chip" for="pg20">20 clases</label>
+                <input type="radio" class="btn-check" name="paqueteGrupal" id="pg24" value="24">
+                <label class="chip" for="pg24">24 clases</label>
+                <input type="radio" class="btn-check" name="paqueteGrupal" id="pglibre" value="libre">
+                <label class="chip" for="pglibre">Libre</label>
+              </div>
+            </div>
+
+            <!-- Paquetes particular -->
+            <div class="paquetes paq-particular">
+              <p class="form-ayuda">Cantidad de clases del paquete</p>
+              <div class="chips">
+                <input type="radio" class="btn-check" name="paqueteParticular" id="pp4" value="4">
+                <label class="chip" for="pp4">4 clases</label>
+                <input type="radio" class="btn-check" name="paqueteParticular" id="pp8" value="8">
+                <label class="chip" for="pp8">8 clases</label>
+                <input type="radio" class="btn-check" name="paqueteParticular" id="pp12" value="12">
+                <label class="chip" for="pp12">12 clases</label>
+                <input type="radio" class="btn-check" name="paqueteParticular" id="pp16" value="16">
+                <label class="chip" for="pp16">16 clases</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- EXTRAORDINARIO -->
+          <div class="bloque-ext">
+            <p class="form-ayuda">Tipo de actividad</p>
+            <div class="chips">
+              <input type="radio" class="btn-check" name="actividadExtra" id="ex-curso" value="curso">
+              <label class="chip" for="ex-curso">Curso</label>
+              <input type="radio" class="btn-check" name="actividadExtra" id="ex-intensivo" value="intensivo">
+              <label class="chip" for="ex-intensivo">Intensivo</label>
+              <input type="radio" class="btn-check" name="actividadExtra" id="ex-sesion" value="sesion">
+              <label class="chip" for="ex-sesion">Sesión especial</label>
+              <input type="radio" class="btn-check" name="actividadExtra" id="ex-otro" value="otro">
+              <label class="chip" for="ex-otro">Otro</label>
+            </div>
+            <div class="form-floating mb-2">
+              <input type="text" class="form-control" id="detalleExtra" name="detalleExtra" placeholder="Nombre de la actividad">
+              <label for="detalleExtra">Nombre de la actividad (ej: Intensivo de verano)</label>
+            </div>
+          </div>
+
+          <!-- Método de pago -->
+          <p class="form-ayuda">Método de pago</p>
+          <div class="chips chips-pago">
+            <input type="radio" class="btn-check" name="metodoPago" id="p1" value="qr" required>
+            <label class="chip" for="p1">QR <small class="chip-pct">-2.2%</small></label>
+
+            <input type="radio" class="btn-check" name="metodoPago" id="p2" value="tarjeta-credito">
+            <label class="chip" for="p2">Tarjeta de crédito <small class="chip-pct">-2.5%</small></label>
+
+            <input type="radio" class="btn-check" name="metodoPago" id="p3" value="debito-automatico">
+            <label class="chip" for="p3">Débito automático <small class="chip-pct">-1.5%</small></label>
+
+            <input type="radio" class="btn-check" name="metodoPago" id="p4" value="transferencia">
+            <label class="chip" for="p4">Transferencia <small class="chip-pct">-0%</small></label>
+
+            <input type="radio" class="btn-check" name="metodoPago" id="p5" value="efectivo">
+            <label class="chip" for="p5">Efectivo <small class="chip-pct">-0%</small></label>
+          </div>
+
+          <!-- Monto de inscripción (fijo, con botón para editar) -->
+          <p class="form-ayuda">Monto de inscripción</p>
+          <div class="insc-box">
+            <input type="checkbox" class="insc-check" id="inscEditar">
+            <div class="insc-fila">
+              <div class="input-group insc-group">
+                <span class="input-group-text">$</span>
+                <div class="form-floating">
+                  <input type="number" class="form-control" id="montoInscripcion" name="montoInscripcion"
+                         placeholder="Monto de inscripción" value="27000" min="0" step="100" tabindex="-1">
+                  <label for="montoInscripcion">Inscripción</label>
+                </div>
+              </div>
+              <label class="btn-editar-insc" for="inscEditar" title="Editar monto de inscripción">
+                <span class="txt-editar"><i class="bi bi-pencil-fill"></i> Editar</span>
+                <span class="txt-listo"><i class="bi bi-check-lg"></i> Listo</span>
+              </label>
+            </div>
+            <small class="insc-nota">
+              <span class="nota-fijo"><i class="bi bi-lock-fill"></i> Monto fijo de inscripción</span>
+              <span class="nota-edit"><i class="bi bi-pencil-fill"></i> Editando, cuando termines apretá "Listo"</span>
+            </small>
+          </div>
+
+          <!-- Monto y fecha -->
+          <div class="row g-2 fila-monto">
+            <div class="col-md-6">
+              <div class="input-group monto-group">
+                <span class="input-group-text">$</span>
+                <div class="form-floating">
+                  <input type="number" class="form-control" id="montoPago" name="montoPago" placeholder="Monto abonado" required min="0" step="100">
+                  <label for="montoPago">Monto abonado</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input type="date" class="form-control" id="fechaPago" name="fechaPago" placeholder="Fecha de pago" required>
+                <label for="fechaPago">Fecha de pago</label>
+              </div>
+            </div>
+          </div>
+
         </div>
+        <!-- /COLUMNA DERECHA -->
+
       </div>
 
-      <!-- CONTACTO Y UBICACIÓN -->
-      <h5 class="form-grupo"><i class="bi bi-chat-dots"></i> Contacto y ubicación</h5>
-      <div class="row g-2 mb-3">
-        <div class="col-md-5">
-          <div class="form-floating">
-            <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Teléfono" required>
-            <label for="telefono">Teléfono</label>
-          </div>
-        </div>
-        <div class="col-md-7">
-          <div class="form-floating">
-            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
-            <label for="email">Email</label>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="form-floating">
-            <input type="text" class="form-control" id="pais" name="pais" placeholder="País" required>
-            <label for="pais">País</label>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="form-floating">
-            <input type="text" class="form-control" id="provincia" name="provincia" placeholder="Provincia" required>
-            <label for="provincia">Provincia</label>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="form-floating">
-            <input type="text" class="form-control" id="ciudad" name="ciudad" placeholder="Ciudad" required>
-            <label for="ciudad">Ciudad</label>
-          </div>
-        </div>
-        <div class="col-12">
-          <div class="form-floating">
-            <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Dirección" required>
-            <label for="direccion">Dirección (domicilio)</label>
-          </div>
-        </div>
-      </div>
-       <!-- CLASE, PROFESOR Y PAGO -->
-      <h5 class="form-grupo"><i class="bi bi-award"></i> Clase</h5>
-
-      <div class="chips mb-3">
-        <input type="radio" class="btn-check" name="clase" id="c1" value="arte-marcial" required>
-        <label class="chip" for="c1">Arte Marcial</label>
-
-        <input type="radio" class="btn-check" name="clase" id="c2" value="arqueria">
-        <label class="chip" for="c2">Arquería</label>
-
-        <input type="radio" class="btn-check" name="clase" id="c3" value="acrobacia">
-        <label class="chip" for="c3">Acrobacia</label>
-
-        <input type="radio" class="btn-check" name="clase" id="c4" value="armas-de-corte">
-        <label class="chip" for="c4">Armas de corte</label>
-
-        <input type="radio" class="btn-check" name="clase" id="c5" value="pa-kua-ritmo">
-        <label class="chip" for="c5">Pa-Kua Ritmo</label>
-
-        <input type="radio" class="btn-check" name="clase" id="c6" value="pa-kua-chi">
-        <label class="chip" for="c6">Pa-Kua Chi</label>
-
-        <input type="radio" class="btn-check" name="clase" id="c7" value="sintonia-yoga-chino">
-        <label class="chip" for="c7">Sintonía Yoga chino</label>
-
-        <input type="radio" class="btn-check" name="clase" id="c8" value="cosmodinamia-tai-chi">
-        <label class="chip" for="c8">Cosmodinamia Tai-Chi</label>
-      </div>
-      <!-- PROFESOR Y PAGO -->
-      <h5 class="form-grupo"><i class="bi bi-award"></i> Profesor</h5>
-      <div class="form-floating mb-2">
-        <select class="form-select" id="profesor" name="profesor" required>
-          <option value="" selected disabled>Seleccionar profesor...</option>
-          <!-- Reemplazá por tus profesores -->
-          <option value="1">Pérez, Juan — Arte Marcial</option>
-          <option value="2">Gómez, Ana — Pa-Kua Chi</option>
-        </select>
-        <label for="profesor">Profesor a cargo</label>
-      </div>
-
-      <p class="chips-label">Método de pago</p>
-      <div class="chips chips-pago mb-3">
-        <input type="radio" class="btn-check" name="metodoPago" id="p1" value="qr" required>
-        <label class="chip" for="p1">QR <small class="chip-pct">-2.2%</small></label>
-
-        <input type="radio" class="btn-check" name="metodoPago" id="p2" value="tarjeta-credito">
-        <label class="chip" for="p2">Tarjeta de Crédito <small class="chip-pct">-2.5%</small></label>
-
-        <input type="radio" class="btn-check" name="metodoPago" id="p3" value="debito-automatico">
-        <label class="chip" for="p3">Tarjeta de Débito Automático <small class="chip-pct">-1.5%</small></label>
-
-        <input type="radio" class="btn-check" name="metodoPago" id="p4" value="transferencia">
-        <label class="chip" for="p4">Transferencia <small class="chip-pct">-0%</small></label>
-
-        <input type="radio" class="btn-check" name="metodoPago" id="p5" value="efectivo">
-        <label class="chip" for="p5">Efectivo <small class="chip-pct">-0%</small></label>
-      </div>
-
+      <!-- BOTONES (ocupan todo el ancho, debajo de las dos columnas) -->
       <div class="reg-acciones">
         <button type="button" class="btn btn-cancelar" (click)="volverTabla()">Cancelar</button>
         <button type="submit" class="btn btn-registrar">
-          Guardar alumno <i class="bi bi-arrow-right ms-1"></i>
+          <i class="bi bi-person-plus-fill me-1"></i> Registrar alumno <i class="bi bi-arrow-right ms-1"></i>
         </button>
       </div>
 
