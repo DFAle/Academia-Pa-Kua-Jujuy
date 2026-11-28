@@ -1,0 +1,157 @@
+<br /><br /><br />
+<div class="container">
+  <form>
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input
+        type="text"
+        class="form-control"
+        id="nombre"
+        aria-describedby="nombre"
+        name="nombre"
+        [(ngModel)]="clase.disciplina"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="categoria" class="form-label">Categoría</label>
+      <select class="form-select" id="categoria" name="categoria" [(ngModel)]="clase.categoria">
+        <option value="" disabled selected>Seleccione una categoría</option>
+        @for (cat of opcionesCategoria; track cat) {
+          <option [value]="cat">{{ cat }}</option>
+        }
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="tipoClase" class="form-label">Tipo Clase</label>
+      <select class="form-select" id="tipoClase" name="tipoClase" [(ngModel)]="clase.tipo">
+        <option value="" disabled selected>Seleccione el tipo</option>
+        @for (tip of opcionesTipo; track tip) {
+          <option [value]="tip">{{ tip }}</option>
+        }
+      </select>
+    </div>
+
+    <!-- SECCIÓN CRONOGRAMA -->
+    <div class="card p-3 mb-3 bg-light">
+      <label class="form-label fw-bold">Cronograma de Clases</label>
+
+      <div class="row g-2 align-items-end">
+        <!-- Selector de Día -->
+        <div class="col-md-4">
+          <label for="dia" class="form-label">Día</label>
+          <select class="form-select" id="dia" name="dia" [(ngModel)]="nuevoHorario.dia">
+            <option value="" disabled selected>Seleccione día</option>
+            @for (dia of diasSemana; track dia) {
+              <option [value]="dia">{{ dia }}</option>
+            }
+          </select>
+        </div>
+
+        <!-- Hora Inicio -->
+        <div class="col-md-3">
+          <label for="horaInicio" class="form-label">Hora Inicio</label>
+          <input
+            type="time"
+            class="form-control"
+            id="horaInicio"
+            name="horaInicio"
+            [(ngModel)]="nuevoHorario.horaInicio"
+          />
+        </div>
+
+        <!-- Hora Fin (Opcional) -->
+        <div class="col-md-3">
+          <label for="horaFin" class="form-label">Hora Fin</label>
+          <input
+            type="time"
+            class="form-control"
+            id="horaFin"
+            name="horaFin"
+            [(ngModel)]="nuevoHorario.horaFin"
+          />
+        </div>
+
+        <!-- Botón Agregar (type="button" para que no envíe el form) -->
+        <div class="col-md-2">
+          <button type="button" class="btn btn-success w-100" (click)="agregarHorario()">
+            + Agregar
+          </button>
+        </div>
+      </div>
+
+      <!-- Lista de horarios ya agregados -->
+      @if (clase.cronograma.length > 0) {
+        <ul class="list-group mt-3">
+          @for (item of clase.cronograma; track $index) {
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <span>
+                <strong>{{ item.dia }}:</strong> {{ item.horaInicio }}
+                @if (item.horaFin) {
+                  - {{ item.horaFin }}
+                }
+              </span>
+              <button
+                type="button"
+                class="btn btn-sm btn-outline-danger"
+                (click)="eliminarHorario($index)"
+              >
+                Quitar
+              </button>
+            </li>
+          }
+        </ul>
+      }
+    </div>
+    <div class="mb-3">
+      <label for="precio" class="form-label">Precio</label>
+      <input
+        type="number"
+        class="form-control"
+        id="precio"
+        aria-describedby="precio"
+        name="precio"
+        [(ngModel)]="clase.precioClase"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="planMensual" class="form-label">Plan Mensual</label>
+      <select
+        class="form-select"
+        id="planMensual"
+        name="planMensual"
+        [(ngModel)]="clase.planMensual"
+      >
+        <option value="" disabled selected>Seleccione el plan</option>
+        @for (plan of planMensual; track plan) {
+          <option [value]="plan">{{ plan }}</option>
+        }
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="limite" class="form-label"> Cupon Maximo</label>
+      <input
+        type="number"
+        class="form-control"
+        id="limite"
+        aria-describedby="limite"
+        name="cuponLimite"
+        [(ngModel)]="clase.cupoMaximo"
+      />
+    </div>
+    <div class="mb-3 form-check">
+      <input
+        type="checkbox"
+        class="form-check-input"
+        id="exampleCheck1"
+        [(ngModel)]="clase.estado"
+        name="estado"
+      />
+      <label class="form-check-label" for="exampleCheck1">Estado</label>
+    </div>
+    <div class="mb-3 m-0">
+      <button *ngIf="accion == 'new'" type="submit" class="btn btn-primary m-1" (click)="registrarClase()"> Agregar Clase </button>
+      <button  *ngIf="accion == 'update'" type="button" class="btn btn-dark m-1" (click)="actualizarClase()">Actualizar</button>
+      <button  type="button" class="btn btn-danger m-1" (click)="cancelar()">Cancelar</button>
+    </div>
+  </form>
+</div>

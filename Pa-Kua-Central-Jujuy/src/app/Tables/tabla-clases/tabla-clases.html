@@ -1,0 +1,72 @@
+<br><br>
+<div class="container mt-5">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2 class="mb-0">Gestión de Clases</h2>
+    <button type="button" class="btn btn-primary" (click)="registrarClase()">
+      + Registrar Clase
+    </button>
+  </div>
+
+  <div class="table-responsive shadow-sm rounded">
+    <table class="table table-hover table-bordered align-middle mb-0">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col" class="text-center">#</th>
+          <th scope="col">Disciplina / Categoría</th>
+          <th scope="col">Horarios</th>
+          <th scope="col" class="text-end">Precio</th>
+          <th scope="col" class="text-center">Cupo</th>
+          <th scope="col" class="text-center">Plan</th>
+          <th scope="col" class="text-center">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of clases">
+          <th scope="row" class="text-center">{{ c._id }}</th>
+          
+          <!-- Disciplina + Categoría -->
+          <td>
+            <div class="fw-bold">{{ c.disciplina }}</div>
+            <small class="text-muted">{{ c.categoria }}</small>
+          </td>
+
+          <!-- Recorremos el array de cronograma -->
+          <td>
+            <div class="d-flex flex-wrap gap-1">
+              <span *ngFor="let h of c.cronograma" class="badge bg-light text-dark border">
+                <strong>{{ h.dia }}:</strong> {{ h.horaInicio }} - {{ h.horaFin }}
+              </span>
+            </div>
+          </td>
+
+          <!-- Formato de moneda -->
+          <td class="text-end fw-semibold">
+            {{ c.precioClase | currency:'ARS':'symbol':'1.0-0' }}
+          </td>
+
+          <!-- Cupo con alumnos actuales vs máximo -->
+          <td class="text-center">
+            <span class="badge bg-info text-dark">
+              {{ c.alumnos.length }} / {{ c.cupoMaximo }}
+            </span>
+          </td>
+
+          <!-- Plan mensual -->
+          <td class="text-center">
+            {{ c.planMensual }} clases/mes
+          </td>
+
+          <!-- Botones de acción -->
+          <td class="text-center text-nowrap">
+            <button type="button" class="btn btn-sm btn-warning me-1" (click)="modificiarClase(c._id)">
+              Editar
+            </button>
+            <button type="button" class="btn btn-sm btn-danger" >
+              Eliminar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

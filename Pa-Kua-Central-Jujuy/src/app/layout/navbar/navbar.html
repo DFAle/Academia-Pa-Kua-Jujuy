@@ -1,5 +1,7 @@
 <header class="top-navbar fixed-top">
-  <div class="container-fluid h-100 px-3 px-lg-4 d-flex align-items-center justify-content-between gap-2">
+  <div
+    class="container-fluid h-100 px-3 px-lg-4 d-flex align-items-center justify-content-between gap-2"
+  >
     <!-- Marca + Navegación -->
     <div class="d-flex align-items-center gap-3 gap-lg-4">
       <div class="d-flex align-items-center gap-2">
@@ -21,25 +23,28 @@
       </div>
 
       <nav class="d-none d-lg-flex align-items-center gap-1 ms-2" aria-label="Navegación principal">
-        <a href="#" class="nav-link-custom nav-link-custom--active" [routerLink]="['home']">Inicio</a>
+        <a href="#" class="nav-link-custom nav-link-custom--active" [routerLink]="['home']"
+          >Inicio</a
+        >
 
         <div class="dropdown nav-dropdown">
-          <button
-            type="button"
-            class="nav-link-custom dropdown-toggle d-inline-flex align-items-center gap-1"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
+          <button type="button" class="nav-link-custom dropdown-toggle d-inline-flex align-items-center gap-1" data-bs-toggle="dropdown" aria-expanded="false">
             <span>Gestión</span>
           </button>
           <ul class="dropdown-menu dropdown-menu-custom">
-            <li><a class="dropdown-item dropdown-item-custom" [routerLink]="['gestionprofesores']">Profesores</a></li>
-            <li><a class="dropdown-item dropdown-item-custom" [routerLink]="['gestionAlumnos']">Alumnos</a></li>
+            <li>
+              <a class="dropdown-item dropdown-item-custom" [routerLink]="['gestionprofesores']">Profesores</a>
+            </li>
+            <li>
+              <a class="dropdown-item dropdown-item-custom" [routerLink]="['gestionAlumnos']">Alumnos</a>
+            </li>
+             
           </ul>
         </div>
 
         <a href="#" class="nav-link-custom">Clases y Horarios</a>
         <a href="#" class="nav-link-custom">Finanzas y Reportes</a>
+        <a href="#" class="nav-link-custom" [routerLink]="['gestionClases']">Clases</a>
       </nav>
     </div>
 
@@ -63,10 +68,15 @@
           </div>
         </div>
 
-        <a href="#" class="logout-btn d-inline-flex align-items-center justify-content-center" title="Cerrar sesión" aria-label="Cerrar sesión" [routerLink]="['Login']"><i class="bi bi-box-arrow-right"></i>
+        <a
+          href="#"
+          class="logout-btn d-inline-flex align-items-center justify-content-center"
+          title="Cerrar sesión"
+          aria-label="Cerrar sesión"
+          [routerLink]="['Login']"
+          ><i class="bi bi-box-arrow-right"></i>
         </a>
       </div>
     </div>
   </div>
 </header>
-
